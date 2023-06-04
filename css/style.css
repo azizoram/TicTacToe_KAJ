@@ -25,6 +25,10 @@ h1 {
   margin: 25px 0;
 }
 
+.player-names form div {
+  margin: 10px;
+}
+
 .player-names label {
   color: #fff;
   font-weight: bold;
@@ -32,11 +36,8 @@ h1 {
 
 .player-names input {
   border-radius: 5px;
+  padding: 10px;
   transition: 0.5s;
-}
-
-input#player-1-name {
-  margin-right: 15px;
 }
 
 .player-names input:focus {
@@ -53,12 +54,12 @@ input#player-1-name {
 
 .player1-name {
   top: 80px;
-  left: 10%;
+  left: 2.5%;
 }
 
 .player2-name {
   top: 80px;
-  right: 10%;
+  right: 2.5%;
 }
 
 .player1-wins,
@@ -71,20 +72,23 @@ input#player-1-name {
 
 .player1-wins {
   top: 135px;
-  left: 10%;
+  left: 2.5%;
 }
 
 .player2-wins {
   top: 135px;
-  right: 10%;
+  right: 2.5%;
 }
 
 .button {
+  margin-top: 1.5em;
   background: #fff;
+  cursor: pointer;
   border-radius: 4px;
+  border: none;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
   display: inline-block;
-  padding: 1.25em 3em;
+  padding: 1.5em 3em;
   text-decoration: none;
   -webkit-transition: 0.25s ease;
   transition: 0.25s ease;
@@ -95,7 +99,7 @@ input#player-1-name {
 }
 
 .btn-choice {
-  margin-top: 25px;
+  margin: 50px 25px;
   padding: 0.8em 1.5em;
 }
 
@@ -289,22 +293,22 @@ input#player-1-name {
   background-image: url(../img/x.svg);
 }
 
-
 /* Media Queries */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   body {
     /* Adjust body styles for smaller screens */
   }
 
   .player1-name,
   .player2-name {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .player1-wins,
   .player2-wins {
     font-size: 18px;
+    top: 110px
   }
 
   .button {
@@ -313,6 +317,11 @@ input#player-1-name {
 
   .boxes {
     width: 320px;
+    margin-top: 100px;
+  }
+
+  .btn-choice {
+    margin: 25px 5px;
   }
 
   .boxes .box {
@@ -325,20 +334,12 @@ input#player-1-name {
   }
 
   .players {
-    width: 50%;
+    width: 20%;
     padding: 1em 0 0.5em;
   }
 
   .players svg g {
     fill: rgba(0, 0, 0, 0.5);
-  }
-
-  .players:first-child {
-    left: 5%;
-  }
-
-  .players:last-child {
-    right: 5%;
   }
 
   .players-turn {

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<title>Tic Tac Toe</title>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/style.css">
@@ -17,22 +18,32 @@
       </div>
 
       <div class="player-names">
-        <label for="player-1-name">Player 1 Name:</label>
-        <input type="text" id="player-1-name" placeholder="Write your name" required>
-        <label for="player-2-name">Player 2 Name:</label>
-        <input type="text" id="player-2-name" placeholder="Write your name" required>
+        <form onsubmit="return false">
+          <label for="player-1-name">Player 1 Name:</label>
+          <div>
+            <input name="player-1-name" type="text" id="player-1-name" placeholder="Write your name" required>
+          </div>
+          <label for="player-2-name">Player 2 Name:</label>
+          <div>
+            <input name="player-2-name" type="text" id="player-2-name" placeholder="Write your name" required>
+          </div>
+          <div>
+            <input class="button" value="Start game" type="submit" id="start-button">
+          </div>
+        </form>
       </div>
-      <a href="#" id='start-button' class="button">Start game</a>
     </header>
   </div>
 
   <!-- show this div when user starts game or game resets -->
 	<div class="board" id="board">
   <header>
-    <p class="player1-name">Player 1</p>
-    <p class='player1-wins'>Wins: <span class='win-num'>0</span></p>
-    <p class="player2-name">Player 2</p>
-    <p class='player2-wins'>Wins: <span class='win-num'>0</span></p>
+    <div>
+      <p class="player1-name">Player 1</p>
+      <p class='player1-wins'>Wins: <span class='win-num'>0</span></p>
+      <p class="player2-name">Player 2</p>
+      <p class='player2-wins'>Wins: <span class='win-num'>0</span></p>
+    </div>
     <h1>Tic Tac Toe</h1>
     <ul>
       <li class="players" id="player1">

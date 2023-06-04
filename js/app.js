@@ -10,8 +10,11 @@ const board = document.getElementById('board');
 const finish = document.getElementById('finish');
 const spaces = document.querySelector('ul.boxes');
 const newGameButton = document.querySelector('#finish a.button');
+const player1 = document.getElementById('player-1-name');
+const player2 = document.getElementById('player-2-name');
 let game;
 let vsComputer;
+let computer = false;
 
 playerNames.style.display = 'none'
 startButton.style.display = 'none'
@@ -20,6 +23,7 @@ finish.style.display = 'none';
 
 vsComputerButton.addEventListener('click', () => {
     hideVsButtons()
+    computer = true;
     document.querySelector('#player-2-name').style.display = 'none'
     document.querySelector('label[for="player-2-name"]').style.display = 'none'
     showStartActions()
@@ -33,10 +37,12 @@ vsFriendButton.addEventListener('click', () => {
 })
 
 startButton.addEventListener("click", () => {
-    start.style.display = 'none';
-    board.style.display = 'block';
-    handleInitGameClass()
-    game.startGame();
+    if ((player1.value.length > 0 && player2.value.length > 0) || (player1.value.length > 0 && computer)) {
+        start.style.display = 'none';
+        board.style.display = 'block';
+        handleInitGameClass()
+        game.startGame();
+    }
 });
 
 spaces.addEventListener("mouseover", (e) => {
